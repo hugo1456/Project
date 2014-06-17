@@ -1,0 +1,6 @@
+== README
+
+This is the application for the JICA project. This app has the objective to make a space to share literature content easily for the users.
+
+Created by Victor Hugo Macias
+6/17/2014
