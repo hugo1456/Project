@@ -18,7 +18,6 @@
 # Ignore other unneded files
 database.yml
 doc/
-config/secrets.yml
 *.swp
 *~
 .project
