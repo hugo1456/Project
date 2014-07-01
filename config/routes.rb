@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :admins, controllers: { registrations: "admins/registrations" }
+  resources :admins, :only => [:show]
+  devise_for :users, :skip => [:sessions]
+  devise_scope :user do
+    get 'login' => 'devise/sessions#new', :as => :new_user_session
+    post 'login' => 'devise/sessions#create', :as => :user_session
+    delete 'logout' => 'devise/sessions#destroy', :as => :destroy_user_session
+  end
   resources :users, :only => [:show]
   root 'static_pages#home'
   match '/help',	to: 'static_pages#help',	via: 'get'
