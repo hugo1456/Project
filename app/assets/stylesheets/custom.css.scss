@@ -1,12 +1,13 @@
 /* Bootstrap Variables */
 
-$bodyBackground: #f5f5f5;
+$body-bg: #f5f5f5;
 
+@import "bootstrap-sprockets";
 @import "bootstrap";
 
 /* mixins, variables, etc. */
 
-$grayMediumLight: #eaeaea;
+$gray-medium-light: #eaeaea;
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -57,7 +58,7 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: $grayLight;
+  color: $gray-light;
 }
 
 p {
@@ -89,12 +90,12 @@ p {
 footer {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid $grayMediumLight;
-  color: $grayLight;
+  border-top: 1px solid $gray-medium-light;
+  color: $gray-light;
   a {
     color: $gray;
     &:hover {
-      color: $grayDarker;
+      color: $gray-darker;
     }
   }
   small {
