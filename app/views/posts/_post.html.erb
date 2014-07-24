@@ -1,0 +1,8 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+  <%= post.content %>
+  </div>
+  <div class="panel-footer">
+  Posted <%= time_ago_in_words(post.created_at) %> ago.
+  </div>
+</div>

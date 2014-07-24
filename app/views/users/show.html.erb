@@ -1,14 +1,14 @@
 <% provide(:title, @user.username) %>
   <div class="row">   
-    <div class="col-md-3 text-certer">
-      <aside>
-        <section>
-          <h1>
-            <%= gravatar_for @user %>
-            <%= @user.username %>
-          </h1>
-        </section>
-      </aside>
+    <div class="col-md-3 text-left">
+      <%= render 'shared/user_info' %>
+      <div>
+        <% if @user.posts.any? %>
+        <h3> Updates (<%= @user.posts.count %>)</h3>
+        <%= render @posts %>
+        <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+        <% end %>
+      </div>
     </div>
     <div class="col-md-9">
       <h1>Projects</h1>

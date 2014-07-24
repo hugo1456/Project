@@ -7,6 +7,8 @@ gem 'autoprefixer-rails'
 gem 'sprockets', '2.11.0'
 gem 'figaro'
 gem 'devise'
+gem 'will_paginate', '3.0.4'
+gem 'will_paginate-bootstrap', '1.0.1'
 
 group :development, :test do
   gem 'sqlite3'
