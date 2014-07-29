@@ -1,8 +1,13 @@
-<div class="panel panel-default">
+<div class="panel panel-default posts">
   <div class="panel-body">
-  <%= post.content %>
+  <%= wrap(post.content) %>
   </div>
   <div class="panel-footer">
   Posted <%= time_ago_in_words(post.created_at) %> ago.
+  <% if post.user == current_user %>
+    <%= link_to "delete", post, method: :delete,
+                                     data: { confirm: "You sure?" },
+                                     title: post.content %>
+  <% end %>
   </div>
 </div>
