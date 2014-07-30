@@ -36,11 +36,11 @@
                   </ul>
                 </li>
               <% else %>
-                <li id= "login">
-                <%= form_for(:user, url: user_session_path, class: "form-inline", id: "login" ) do |f| %>
-                <%= f.text_field :login, autofocus: true, placeholder: "Login" %>
-                <%= f.password_field :password, autocomplete: "off", placeholder: "Password" %>
-                <%= f.submit "Sign in", class:"btn btn=default" %>
+                <li>
+                <%= form_for(:user, url: user_session_path, html: { class: "form-inline", id: "login" } ) do |f| %>
+                <%= f.text_field :login, autofocus: true, placeholder: "Login", class: "form-control" %>
+                <%= f.password_field :password, autocomplete: "off", placeholder: "Password", class: "form-control" %>
+                <%= f.submit "Sign in", class:"btn btn-default" %>
                 <% end %>     
                 </li>
               <% end %>

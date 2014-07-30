@@ -89,6 +89,7 @@ p {
   padding-top: 11px;
   padding-bottom: 11px;
 }
+
 /* footer */
 
 footer {
@@ -146,6 +147,15 @@ aside {
 }
 
 /* Forms */
+
+.form-group {
+  .password {
+  padding: 0px 5px 0px 0px;
+  }
+  .confirm {
+  padding: 0px 0px 0px 5px;
+  }
+}
 
 #error_explanation {
   color: #f00;

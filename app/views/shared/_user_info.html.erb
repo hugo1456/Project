@@ -1,14 +1,15 @@
 <div class="panel panel-default user_info">
   <div class="panel-body">
-    <%= link_to gravatar_for(current_user, size: 52), current_user %>
+    <% @user ||= current_user %>
+    <%= link_to gravatar_for(@user, size: 52), @user %>
     <h3>
-      <%= link_to current_user.username, current_user %>
+      <%= link_to @user.username, @user %>
     </h3>
     <span>
-      <%= link_to "view my profile", current_user %>
+      <%= link_to "view my profile", @user %>
     </span>
     <span>
-      <%= pluralize(current_user.posts.count, "post") %>
+      <%= pluralize(@user.posts.count, "post") %>
     </span>
   </div>
 </div>

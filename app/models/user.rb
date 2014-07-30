@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :authentication_keys => [:login]
   attr_accessor :login
-  validates :username, :uniqueness => {:case_sensitive => false }
+  validates :username, :uniqueness => {:case_sensitive => false }, presence: true
 
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
