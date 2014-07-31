@@ -7,11 +7,14 @@ Rails.application.routes.draw do
     post 'login' => 'devise/sessions#create', :as => :user_session
     delete 'logout' => 'devise/sessions#destroy', :as => :destroy_user_session
   end
-  resources :users, :only => [:show]
+  resources :users, :only => [:show], :shallow => true do
+    resources :collections, :only => [:show, :create, :destroy]
+  end
   resources :posts, :only => [:create, :destroy]
   root 'static_pages#home'
   match '/help',	to: 'static_pages#help',	via: 'get'
   match 'about',	to: 'static_pages#about',	via: 'get'
+  get "shared/collection_form" => 'collection#form',	:as => :collection_form
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -9,7 +9,8 @@
   </head>
   <body>
     <%= render 'layouts/header' %>
-    <div class="container"> 
+    <div class="container">
+      <%= render 'shared/collection_form' if user_signed_in? %> 
       <%= yield %>
       <%= render 'layouts/footer' %>
       <%= debug(params) if Rails.env.development? %>
