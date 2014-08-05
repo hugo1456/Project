@@ -8,8 +8,19 @@
     <span>
       <%= link_to "view my profile", @user %>
     </span>
-    <span>
+    <div>
       <%= pluralize(@user.posts.count, "post") %>
-    </span>
-  </div>
+    </div>
+  </div>   
+  <ul class="list-group">
+    <% if params[:id] == nil %>
+      <li class="list-group-item">
+        Id is empty
+      </li>           
+    <% else %>
+      <li class="list-group-item">
+        There is an Id
+      </li>
+    <% end %>
+  </ul>
 </div>

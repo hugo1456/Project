@@ -5,6 +5,7 @@ class CollectionsController < ApplicationController
     @collection = current_user.collections.build(collection_params)
     if @collection.save
       flash[:success] = "Collection created!"
+      redirect_to collection_path(@collection)
     else
       flash[:error] = "New collection Failed"
       redirect_to root_path

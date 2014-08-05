@@ -13,10 +13,13 @@
                 <%= render "layouts/header_admin" %>
               <% else %>
                 <li>
-                <%= form_for(:user, url: user_session_path, html: { class: "form-inline", id: "login" } ) do |f| %>
-                <%= f.text_field :login, autofocus: true, placeholder: "Login", class: "form-control" %>
-                <%= f.password_field :password, autocomplete: "off", placeholder: "Password", class: "form-control" %>
-                <%= f.submit "Sign in", class:"btn btn-default" %>
+                <%= form_for(:user, url: user_session_path, html: { class: "navbar-form", id: "login" } ) do |f| %>
+                  <div class="form-group">
+                  <%= f.text_field :login, autofocus: true, placeholder: "Login", class: "form-control" %></div>
+                  <div class="form-group">
+                  <%= f.password_field :password, autocomplete: "off", placeholder: "Password", class: "form-control" %></div>               
+                  <div class="form-group"> <%= f.submit "Sign in", class:"btn btn-default" %> </div>
+                  <div class="checkbox"> <%= f.check_box :remember_me %> <%= f.label :remember_me%></div>
                 <% end %>     
                 </li>
               <% end %>
