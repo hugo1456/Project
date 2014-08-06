@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   match '/help',	to: 'static_pages#help',	via: 'get'
   match 'about',	to: 'static_pages#about',	via: 'get'
-  get "shared/collection_form" => 'collection#form',	:as => :collection_form
+  #  get "shared/collection_form" => 'collection#form',	:as => :collection_form
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
