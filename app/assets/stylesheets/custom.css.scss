@@ -1,6 +1,6 @@
 /* Bootstrap Variables */
 
-$body-bg: #f5f5f5;
+$body-bg: #f3f3f3;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -186,6 +186,24 @@ aside {
   .panel-footer {
   padding: 5px 10px 5px 10px;
   } 
+}
+
+/* Collections */
+
+.collection {
+  .col-md-3 {
+    padding: 0px 5px 0px 5px;
+    .panel {
+      height: 200px;
+      .panel-heading {
+        padding: 1px 3px 1px 3px;
+      }
+      .panel-body {
+
+        padding: 5px 2px 5px 2px;
+      }
+    }
+  }
 }
 
 /* miscellaneous */
