@@ -44,6 +44,11 @@ textarea {
   margin: 0 auto;
 }
 
+.pagination-centered{
+  display: table;
+  margin: 0 auto;
+}
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -177,6 +182,12 @@ aside {
   }
 }
 
+/* User Info */
+
+.user_info {
+  width: 263px;
+}
+
 /* Posts */
 
 .posts {
@@ -194,9 +205,10 @@ aside {
   .col-md-3 {
     padding: 0px 5px 0px 5px;
     .panel {
-      height: 200px;
+      height: 210px;
       .panel-heading {
-        padding: 1px 3px 1px 3px;
+        padding: 0px 3px 0px 3px;
+        height: 20px;
       }
       .panel-body {
 

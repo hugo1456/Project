@@ -6,14 +6,14 @@
         <% if @user.posts.any? %>
         <h3>Last Updates</h3>
         <%= render @posts %>
-        <%= will_paginate @posts, param_name: 'posts',  renderer: BootstrapPagination::Rails, inner_window: 1, previous_label: '&#8592;', next_label: '&#8594;' %>
+        <%= will_paginate @posts, param_name: 'posts',  renderer: BootstrapPagination::Rails, inner_window: 1, previous_label: '&#8592;', next_label: '&#8594;', class: "pagination-centered" %>
         <% end %>
       </div>
     </div>
     <div class="col-md-7 collection">
       <h1>Collections</h1>
       <%= render @collections %>
-      <%= will_paginate @collections, param_page: 'collections', renderer: BootstrapPagination::Rails %>
+      <%= will_paginate @collections, param_page: 'collections', renderer: BootstrapPagination::Rails, class: "pagination-centered" %>
     </div>
     <div class= "col-md-2">
     Other    
