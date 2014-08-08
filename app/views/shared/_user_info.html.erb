@@ -1,4 +1,4 @@
-<div class="panel panel-default user_info">
+<div class="panel panel-default user_info" >
   <div class="panel-body">
     <% @user ||= current_user %>
     <%= link_to gravatar_for(@user, size: 52), @user %>
@@ -13,14 +13,12 @@
     </div>
   </div>   
   <ul class="list-group">
+    <li class= "list-group-item" >
     <% if params[:id] == nil %>
-      <li class="list-group-item">
-        Id is empty
-      </li>           
+      Id is empty
     <% else %>
-      <li class="list-group-item">
-        There is an Id
-      </li>
+      <%= params[:controller] %>
     <% end %>
+    </li>
   </ul>
 </div>
