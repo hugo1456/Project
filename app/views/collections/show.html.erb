@@ -1,4 +1,12 @@
-
+<% provide(:title, @current_collection.name) %>
   <div class="row">
-    <h1> Collections </h1>
+    <div class="col-md-3">
+      <%= render 'shared/user_info' %>
+    </div>
+    <div class="col-md-7">
+      <%= render 'collection_info' %>      
+    </div>
+    <div class="col-md-2">
+      Other
+    </div>
   </div>

@@ -1,7 +1,7 @@
 module CollectionsHelper
 
   def collection_wrap(content, n)
-   truncate(sanitize(raw(content.split.map{ |s| collection_wrap_long_string(s) }.join(' '))), length: n, separator: ' ', escape: false)
+   truncate(strip_tags(sanitize(raw(content.split.map{ |s| collection_wrap_long_string(s) }.join(' ')))), length: n, separator: ' ', escape: false)
   end
 
   private
