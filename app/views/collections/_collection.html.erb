@@ -1,4 +1,4 @@
-<%= link_to collection, title: collection.name do %>
+<%= link_to collection, title: collection_wrap(collection.name, 60) do %>
 <div class= "col-md-3">
   <div class= "panel panel-default">
     <div class= "panel-heading">
@@ -7,6 +7,11 @@
     <div class= "panel-body text-center">
       <%= image_tag("Fireworks/Book5.png", alt: "Collection", size: "140" ) %>
       Last Update <%= time_ago_in_words(collection.updated_at) %> ago.
+      <% if collection.user == current_user %>
+      <% link_to "delete", collection, method: :delete,
+                                     data: { confirm: "You sure?" },
+                                     title: collection.name %>
+      <% end %>
     </div>
   </div>
 </div>

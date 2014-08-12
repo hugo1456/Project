@@ -6,7 +6,7 @@
     </div>
     <div class="col-md-6">
       <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>"><%= value %></div>
+        <div class="alert alert-<%= key %>"><%= value %></div>   
       <% end %>
       <%= render 'shared/post_form' %>
       <%= render 'shared/feed' %>

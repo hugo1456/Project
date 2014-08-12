@@ -5,11 +5,9 @@
     <h3>
       <%= link_to @user.username, @user %>
     </h3>
-    <span>
-      <%= link_to "view my profile", @user %>
-    </span>
     <div>
-      <%= pluralize(@user.posts.count, "post") %>
+      <%= pluralize(@user.posts.count, "post") + "." %>
+      <%= link_to "view my profile", @user %>
     </div>
   </div>   
   <ul class="list-group">
