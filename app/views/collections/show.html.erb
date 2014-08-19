@@ -4,6 +4,7 @@
       <%= render 'shared/user_info' %>
     </div>
     <div class="col-md-7">
+      <%= render 'collection_bar' if @user == current_user %> 
       <%= render 'collection_info' %>      
     </div>
     <div class="col-md-2">
