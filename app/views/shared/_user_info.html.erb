@@ -9,6 +9,7 @@
       <%= pluralize(@user.posts.count, "post") + "." %>
       <%= link_to "view my profile", @user %>
     </div>
+    <%= render 'shared/stats' %>
   </div>   
   <ul class="list-group">
     <li class= "list-group-item" >

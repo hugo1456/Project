@@ -8,4 +8,18 @@ class UsersController < ApplicationController
       @collections = @user.collections.paginate(page: params[:collections], per_page: 12)
     end
   end
+
+    def following
+    @title = "Following"
+    @user = User.find(params[:id])
+    @users = @user.followed_users.paginate(page: params[:users])
+    render 'show_follow'
+  end
+
+  def followers
+    @title = "Followers"
+    @user = User.find(params[:id])
+    @users = @user.followers.paginate(page: params[:users])
+    render 'show_follow'
+  end
 end

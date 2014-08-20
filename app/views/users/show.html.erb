@@ -2,13 +2,13 @@
   <div class="row">   
     <div class="col-md-3 text-left">
       <%= render 'shared/user_info' %>
-      <div>
-        <% if @user.posts.any? %>
+      <% if @user.posts.any? %>
+        <div>
         <h3>Last Updates</h3>
         <%= render @posts %>
         <%= will_paginate @posts, param_name: 'posts',  renderer: BootstrapPagination::Rails, inner_window: 1, previous_label: '&#8592;', next_label: '&#8594;', class: "pagination-centered" %>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
     </div>
     <div class="col-md-7 collection">
       <h1>Collections</h1>
