@@ -6,9 +6,13 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(posts_params)
     if @post.save
       flash[:success] = "Status updated!"
-      redirect_to root_path
+      @feed_items = []     
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.js
+      end
     else
-      @feed_items = current_user.feed.paginate(page: params[:feeds])
+      @feed_items = current_user.feed.paginate(page: params[:feeds], per_page: 10)
       render 'static_pages/home'
     end
   end

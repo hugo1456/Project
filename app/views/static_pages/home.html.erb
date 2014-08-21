@@ -4,10 +4,8 @@
     <div class="col-md-3">
       <%= render 'shared/user_info' %>
     </div>
-    <div class="col-md-6">
-      <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>"><%= value %></div>   
-      <% end %>
+    <div class="col-md-6 feed">
+      <%= render 'shared/flash' %>
       <%= render 'shared/post_form' %>
       <%= render 'shared/feed' %>
     </div>

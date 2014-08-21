@@ -1,7 +1,7 @@
 <div class="panel panel-default">
   <div class="panel-heading">Status update</div>
   <div class="panel-body">
-    <%= form_for(@post) do |f| %>
+    <%= form_for(@post, remote: true) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
     <%= f.text_area :content, class: "form-control", rows: "3", wrap: "hard", cols: "60", placeholder: "What is in your mind" %>
     <%= f.submit "Post", class: "btn btn-large btn-primary" %>
