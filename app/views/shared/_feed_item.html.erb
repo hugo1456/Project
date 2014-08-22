@@ -1,13 +1,19 @@
 <div class="panel panel_default feeds">
   <div class="panel-body">
-    <%= link_to gravatar_for(feed_item.user), feed_item.user %>
-    <span class="user">
-    <%= link_to feed_item.user.username, feed_item.user %>
-    </span>
-    <span class="content"><%= wrap(feed_item.content) %></span>
-  </div>
-  <div class="panel-footer">
+    <div>
+      <%= link_to gravatar_for(feed_item.user, size: 42), feed_item.user %>
+      <section class="user">
+      <%= link_to feed_item.user.username, feed_item.user %>
+      </section>
+    </div>
     Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
+  </div>
+  <ul class= "list-group post_content">
+    <li class= "list-group-item">
+     <span class="content"><%= wrap(feed_item.content) %></span>
+    </li>
+  </ul>
+  <div class="panel-footer">  
     <% if feed_item.user == current_user %>
       <%= link_to "delete", feed_item, method: :delete,
                                        data: { confirm: "You sure?" },

@@ -1,10 +1,10 @@
 class CollectionsController < ApplicationController
   before_action :authenticate_user!,	only: [:create, :destroy]
   before_action :correct_user,		only: :destroy
+
   def show
     @current_collection = Collection.find(params[:id])
-    @user = @current_collection.user
-    
+    @user = @current_collection.user    
   end
   
   def create

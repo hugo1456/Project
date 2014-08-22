@@ -228,6 +228,24 @@ aside {
   } 
 }
 
+/* Feeds */
+
+.feeds {
+  margin-bottom: 10px;
+  .panel-body {
+    padding: 10px;
+  }
+  ul {
+    li {
+      padding: 5px 10px;
+    }
+  }
+  .panel-footer {
+    padding: 5px 10px;
+    text-align: right;
+  }
+}
+
 /* Collections */
 
 .collection {
@@ -254,6 +272,22 @@ aside {
     }
   }
 }
+
+/* Users index */
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-top: 1px solid $gray-medium-light;
+    &:last-child {
+      border-bottom: 1px solid $gray-medium-light;
+    }
+  }
+}
+
 /* miscellaneous */
 
 .debug_dump {
