@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :admins, controllers: { registrations: "admins/registrations" }
   resources :admins, :only => [:show]
-  devise_for :users, :skip => [:sessions]
+  devise_for :users, :skip => [:sessions], controllers: { registrations: "users/registrations" }
   devise_scope :user do
     get 'login' => 'devise/sessions#new', :as => :new_user_session
     post 'login' => 'devise/sessions#create', :as => :user_session
@@ -16,8 +16,9 @@ Rails.application.routes.draw do
   resources :posts, :only => [:create, :destroy]
   resources :relationships, :only => [:create, :destroy]
   root 'static_pages#home'
-  match '/help',	to: 'static_pages#help',	via: 'get'
+  match 'help',		to: 'static_pages#help',	via: 'get'
   match 'about',	to: 'static_pages#about',	via: 'get'
+  match 'search',	to: 'static_pages#search',	via: 'get'
   #  get "shared/collection_form" => 'collection#form',	:as => :collection_form
 
   # The priority is based upon order of creation: first created -> highest priority.

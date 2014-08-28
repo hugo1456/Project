@@ -11,6 +11,7 @@ gem 'devise'
 gem 'will_paginate', '3.0.4'
 gem 'will_paginate-bootstrap', '1.0.1'
 gem 'sanitize', '3.0.0'
+gem 'friendly_id', '5.0.4'
 
 group :development, :test do
   gem 'sqlite3'

@@ -12,4 +12,7 @@ class StaticPagesController < ApplicationController
   def about
   end
 
+  def search
+    @users = User.paginate(page: params[:users]).search(params[:search])
+  end
 end

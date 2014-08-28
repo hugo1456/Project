@@ -15,6 +15,9 @@ class User < ActiveRecord::Base
   attr_accessor :login
   validates :username, :uniqueness => {:case_sensitive => false }, presence: true
 
+  extend FriendlyId
+  friendly_id :username, use: :slugged
+
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)
@@ -38,5 +41,10 @@ class User < ActiveRecord::Base
 
   def unfollow!(other_user)
     relationships.find_by(followed_id: other_user.id).destroy
+  end
+
+  def self.search(search)
+    query = "%#{search}%"
+    where('username LIKE ?', query)
   end
 end

@@ -3,7 +3,7 @@ class CollectionsController < ApplicationController
   before_action :correct_user,		only: :destroy
 
   def show
-    @current_collection = Collection.find(params[:id])
+    @current_collection = Collection.friendly.find(params[:id])
     @user = @current_collection.user    
   end
   
