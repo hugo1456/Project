@@ -1,13 +1,11 @@
 <div class="panel panel-default user_info" >
   <div class="panel-body">
     <% @user ||= current_user %>
-    <%= link_to gravatar_for(@user, size: 52), @user %>
-    <h3>
-      <%= link_to @user.username, @user %>
-    </h3>
-    <div>
+    <section>
+      <%= link_to gravatar_for(@user, size: 52), @user %>
+      <h3><%= link_to @user.username, @user %></h3>
       <%= link_to "view my profile", @user %>
-    </div>
+    </section>
     <%= render 'shared/stats' %>
   </div>   
   <ul class="list-group">

@@ -1,8 +1,11 @@
-<li>
-  <%= gravatar_for user, size: 52 %>
-  <%= link_to user.username, user %>
-  <% if current_user.admin? && !current_user?(user) %>
-    | <%= link_to "delete", user, method: :delete,
-                                  data: { confirm: "You sure?" } %>
-  <% end %>
-</li>
+<div class= "panel panel-default search_info">
+  <div class="panel-body">
+    <section>
+      <%= link_to gravatar_for(user, size: 52) %>
+      <h3><%= link_to user.username, user %></h3>
+      <div class="pull-right">
+        <%=render 'shared/stats' %>
+      </div>
+    </section>
+  </div>
+</div>

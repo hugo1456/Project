@@ -45,6 +45,6 @@ class User < ActiveRecord::Base
 
   def self.search(search)
     query = "%#{search}%"
-    where('username LIKE ?', query)
+    Rails.env.development? ? where('username LIKE :search OR first_name LIKE :search OR last_name LIKE :search', search: query) : where('username ILIKE :search OR first_name ILIKE :search OR last_name ILIKE :search', search: query )
   end
 end

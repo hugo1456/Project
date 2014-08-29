@@ -1,23 +1,21 @@
 <% provide(:title, @user.username) %>
-  <div class="row">   
-    <div class="col-md-3 text-left">
-      <%= render 'shared/user_info' %>
-      <% if @user.posts.any? %>
-        <div>
+<div class="row">   
+  <div class="col-md-3 text-left">
+    <%= render 'shared/user_info' %>
+    <% if @user.posts.any? %>
+      <div>
         <h3>Last Updates</h3>
         <%= render @posts %>
         <%= will_paginate @posts, param_name: 'posts',  renderer: BootstrapPagination::Rails, inner_window: 1, previous_label: '&#8592;', next_label: '&#8594;', class: "pagination-centered" %>
-        </div>
-      <% end %>
-    </div>
-    <div class="col-md-7 collection">
-      <h1>Collections</h1>
-      <%= render @collections %>
-      <%= will_paginate @collections, param_page: 'collections', renderer: BootstrapPagination::Rails, class: "pagination-centered" %>
-    </div>
-    <div class= "col-md-2">
-    Other    
-    </div>
+      </div>
+    <% end %>
   </div>
+  <div class="col-md-7 collection">
+    <h1>Collections</h1>
+    <%= render @collections %>
+    <%= will_paginate @collections, param_page: 'collections', renderer: BootstrapPagination::Rails, class: "pagination-centered" %>
+  </div>
+  <%= render 'shared/advert' %>
+</div>
 
 

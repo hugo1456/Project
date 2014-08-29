@@ -1,13 +1,11 @@
 <% provide(:title, @current_collection.name) %>
-  <div class="row">
-    <div class="col-md-3">
-      <%= render 'shared/user_info' %>
-    </div>
-    <div class="col-md-7">
-      <%= render 'collection_bar' if @user == current_user %> 
-      <%= render 'collection_info' %>      
-    </div>
-    <div class="col-md-2">
-      Other
-    </div>
+<div class="row">
+  <div class="col-md-3">
+    <%= render 'shared/user_info' %>
   </div>
+  <div class="col-md-7">
+    <%= render 'collection_bar' if @user == current_user %> 
+    <%= render 'collection_info' %>      
+  </div>
+  <%= render 'shared/advert' %>
+</div>

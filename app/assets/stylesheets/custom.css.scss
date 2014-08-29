@@ -217,9 +217,20 @@ aside {
 /* User Info */
 
 .user_info {
-  width: 263px;
+  h3 {
+    margin: 0px;
+  }
 }
 
+.search_info {
+  h3 {
+    float: left;
+    margin: 0px;
+  }
+  .pull-right {
+    margin: 6px 1px;
+  }
+}
 /* Posts */
 
 .posts {
