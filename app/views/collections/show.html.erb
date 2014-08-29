@@ -4,7 +4,11 @@
     <%= render 'shared/user_info' %>
   </div>
   <div class="col-md-7">
-    <%= render 'collection_bar' if @user == current_user %> 
+    <%= render 'shared/flash' %>
+    <% if current_user?(@user) %>
+      <%= render 'update_form' %>
+      <%= render 'collection_bar' %> 
+    <% end %>
     <%= render 'collection_info' %>      
   </div>
   <%= render 'shared/advert' %>

@@ -1,6 +1,6 @@
 class CollectionsController < ApplicationController
   before_action :authenticate_user!,	only: [:create, :destroy]
-  before_action :correct_user,		only: :destroy
+  before_action :correct_user,		only: [:destroy, :update]
 
   def show
     @current_collection = Collection.friendly.find(params[:id])
@@ -13,7 +13,7 @@ class CollectionsController < ApplicationController
       flash[:success] = "Collection created!"
       redirect_to collection_path(@collection)
     else
-      flash[:danger] = "New collection Failed"
+      flash[:danger] = @collection.errors.full_messages
       redirect_to root_path
     end
   end
@@ -23,15 +23,27 @@ class CollectionsController < ApplicationController
     flash[:success] = "Collection deleted"
     redirect_to user_path(current_user)
   end
+  
+  def update
+    if @collection.update_attributes(collection_params(:current_collection))
+      @collection.slug = nil
+      @collection.save!
+      flash[:success] = "Collection Updated"
+      redirect_to @collection
+    else
+      flash[:danger] = @collection.errors.full_messages
+      redirect_to @collection
+    end
+  end
 
   private
   
-    def collection_params
-      params.require(:collection).permit(:name, :description)
+    def collection_params(collection)
+      params.require(collection).permit(:name, :description)
     end
     
     def correct_user
-      @collection = current_user.collections.find_by(id: params[:id])
+      @collection = current_user.collections.friendly.find(params[:id])
       redirect_to root_path if @collection.nil?
     end
 end

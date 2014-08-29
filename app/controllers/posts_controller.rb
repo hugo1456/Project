@@ -13,6 +13,7 @@ class PostsController < ApplicationController
         format.js
       end
     else
+     flash[:danger] = @post.errors.full_messages
      render 'static_pages/home'
     end
   end
