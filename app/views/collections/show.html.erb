@@ -5,10 +5,6 @@
   </div>
   <div class="col-md-7">
     <%= render 'shared/flash' %>
-    <% if current_user?(@user) %>
-      <%= render 'update_form' %>
-      <%= render 'collection_bar' %> 
-    <% end %>
     <%= render 'collection_info' %>      
   </div>
   <%= render 'shared/advert' %>

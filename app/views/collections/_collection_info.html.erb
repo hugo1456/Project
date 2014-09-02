@@ -1,9 +1,23 @@
 <div class="panel panel-default collection_info">
   <div class="panel-heading">
-    <h3 class="panel-title"> <%= collection_wrap(@current_collection.name, 60) %> </h3>
-
-
-
+    <% if current_user?(@user) %>
+      <div class="dropdown pull-right">
+        <a href="#" class="menu dropdown-toggle" data-toggle="dropdown">
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#" data-toggle="modal" data-target="#edit-form"> Edit </a></li>
+          <li class="divider"></li>
+          <li>
+            <%= link_to "Delete", @current_collection, method: :delete,
+			data: { confirm: "This can't be undone, are you sure?"},
+			title: @current_collection.name %>
+          </li>
+        </ul>
+      </div>
+      <%= render 'edit_form' %>
+    <% end %>
+    <h3 class="panel-title"><%= collection_wrap(@current_collection.name, 60) %></h3>
   </div>
   <div class="panel-body">
     <%= collection_wrap(@current_collection.description, 500) %>

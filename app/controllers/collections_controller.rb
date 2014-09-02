@@ -8,7 +8,7 @@ class CollectionsController < ApplicationController
   end
   
   def create
-    @collection = current_user.collections.build(collection_params)
+    @collection = current_user.collections.build(collection_params(:collection))
     if @collection.save
       flash[:success] = "Collection created!"
       redirect_to collection_path(@collection)
