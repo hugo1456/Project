@@ -198,7 +198,7 @@ DEPENDENCIES
   friendly_id (= 5.0.4)
   jbuilder (~> 2.0)
   jquery-rails (= 3.0.4)
-  pg
+  pg (= 0.15.1)
   rails (= 4.1.1)
   rails_12factor (= 0.0.2)
   rspec-rails (= 2.14.0.rc1)
