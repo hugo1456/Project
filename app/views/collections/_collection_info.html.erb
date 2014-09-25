@@ -6,16 +6,16 @@
           <span class="caret"></span>
         </a>
         <ul class="dropdown-menu" role="menu">
-          <li><a href="#" data-toggle="modal" data-target="#edit-form"> Edit </a></li>
+          <li><a href="#" data-toggle="modal" data-target="#edit-collection-form"> Edit </a></li>
           <li class="divider"></li>
           <li>
             <%= link_to "Delete", @current_collection, method: :delete,
-			data: { confirm: "This can't be undone, are you sure?"},
-			title: @current_collection.name %>
+          	data: { confirm: "This can't be undone, are you sure?"},
+            title: @current_collection.name %>
           </li>
         </ul>
       </div>
-      <%= render 'edit_form' %>
+      <%= render 'edit_collection_form' %>
     <% end %>
     <h3 class="panel-title"><%= collection_wrap(@current_collection.name, 60) %></h3>
   </div>

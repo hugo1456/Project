@@ -8,7 +8,9 @@ Rails.application.routes.draw do
     delete 'logout' => 'devise/sessions#destroy', :as => :destroy_user_session
   end
   resources :users, :only => [:show], :shallow => true do
-    resources :collections, :only => [:show, :create, :destroy, :update]
+    resources :collections, :only => [:show, :create, :destroy, :update] do
+      resources :books, :only => [:show, :create, :destroy, :update]
+    end
     member do
       get :following, :followers
     end

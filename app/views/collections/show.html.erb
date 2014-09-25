@@ -2,10 +2,15 @@
 <div class="row">
   <div class="col-md-3">
     <%= render 'shared/user_info' %>
+    <%= render 'books/books_menu' %>
   </div>
   <div class="col-md-7">
     <%= render 'shared/flash' %>
-    <%= render 'collection_info' %>      
+    <%= render 'collection_info' %>   
+    <% if @current_collection.books.any? %>
+    Books:
+    <%= render @books %>
+    <% end %>
   </div>
   <%= render 'shared/advert' %>
 </div>
