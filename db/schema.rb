@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140828061400) do
+ActiveRecord::Schema.define(version: 20140925054050) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -30,6 +30,18 @@ ActiveRecord::Schema.define(version: 20140828061400) do
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+
+  create_table "books", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.boolean  "status",        default: false
+    t.integer  "collection_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "books", ["collection_id", "name"], name: "index_books_on_collection_id_and_name", unique: true
+  add_index "books", ["name"], name: "index_books_on_name"
 
   create_table "collections", force: true do |t|
     t.string   "name"

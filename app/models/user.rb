@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 					class_name: "Relationship",
 					dependent: :destroy
   has_many :followers, through: :reverse_relationships, source: :follower
+  has_many :books, through: :collections
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

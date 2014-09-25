@@ -3,6 +3,10 @@ module CollectionsHelper
   def collection_wrap(content, n)
    truncate(sanitize(strip_tags(raw(content.split.map{ |s| collection_wrap_long_string(s) }.join(' ')))), length: n, separator: ' ', escape: false)
   end
+  
+  def current_collection
+    @current_collection ||= Collection.friendly.find(params[:id])
+  end
 
   private
 
