@@ -13,6 +13,11 @@ class StaticPagesController < ApplicationController
   end
 
   def search
-    @users = User.paginate(page: params[:users]).search(params[:search])
+    if params[:search].blank?
+      flash[:danger] = "Search field can't be blank"
+      redirect_to root_path
+    else
+      @users = User.paginate(page: params[:users]).search(params[:search])
+    end
   end
 end

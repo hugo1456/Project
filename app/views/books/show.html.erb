@@ -1,12 +1,12 @@
-<% provide(:title, @current_collection.name) %>
+<% provide(:title, @current_book.name) %>
 <div class="row">
   <div class="col-md-3">
     <%= render 'shared/user_info' %>
-    <%= render 'books/books_menu' %>
+    <%= render 'books_menu' %>
   </div>
   <div class="col-md-7">
     <%= render 'shared/flash' %>
-    <%= render 'collection_info' %>   
+    <%= render 'book_info' %>
   </div>
   <%= render 'shared/advert' %>
 </div>

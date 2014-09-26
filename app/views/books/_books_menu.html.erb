@@ -1,8 +1,20 @@
-<div class="bs-docs-sidebar">
-  <ul class="nav bs-docs-sidenav">
-    <li>
-      <a href="#" data-toggle="modal" data-target="#add-book-form">Add new Book</a>
-    </li>
-  </ul>
+<div class="panel panel-default book_menu" >
+  <div class="panel-body">
+    <ul class="nav bs-docs-sidenav">
+      <li>
+        <a href="#" data-toggle="modal" data-target="#add-book-form">Add new Book</a>
+      </li>
+    </ul>
+  </div>
+  <% if @current_collection.books.any? %>
+    <ul class="list-group">
+      <li class="list-group-item">
+        <ul class="nav bs-docs-sidenav">
+          <li>Books:</li>
+          <%= render @books %>
+        </ul>
+      </li>
+    </ul>  
+  <% end %>
   <%= render "books/add_book_form" %>
-</div>
+</div>  

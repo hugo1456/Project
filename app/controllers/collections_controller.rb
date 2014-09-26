@@ -42,4 +42,9 @@ class CollectionsController < ApplicationController
     def collection_params(collection)
       params.require(collection).permit(:name, :description)
     end
+    
+    def correct_user
+      @collection = current_user.collections.friendly.find(params[:id])
+      redirect_to root_path if @collection.nil?
+    end
 end

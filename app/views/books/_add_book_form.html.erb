@@ -8,7 +8,7 @@
       <div class="modal-body">
          <div class="row">
            <div class="col-md-12">
-          <%= form_for(:book, url: collection_books_path(current_collection), html: { class: "form-horizontal collection-form" }) do |f| %>
+          <%= form_for(:book, url: collection_books_path(current_collection), html: { class: "form-horizontal edit-form" }) do |f| %>
 
           <div class= "form-group"><%= f.text_field :name, placeholder: "Name your book, max 50", maxlength: "50", class: "form-control", autofocus: true %></div>
 
