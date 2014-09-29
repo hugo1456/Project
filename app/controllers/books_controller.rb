@@ -3,10 +3,18 @@ class BooksController < ApplicationController
   before_action :correct_user, only: [:destroy, :update]
 
   def show
-    @current_book = Book.friendly.find(params[:id])
-    @current_collection = @current_book.collection
-    @user = @current_book.collection.user
-    @books = @current_collection.books
+    if Book.friendly.find(params[:id]) == nil
+      redirect_to root_path
+    else
+      @current_book = Book.friendly.find(params[:id])
+      @current_collection = @current_book.collection
+      @user = @current_book.collection.user
+      @books = @current_collection.books
+      @chapters = @current_book.chapters if @current_book.chapters.any?
+      unless params[:c].blank?
+        @current_chapter = @current_book.chapters.friendly.find(params[:c])
+      end
+    end
   end
   
   def create

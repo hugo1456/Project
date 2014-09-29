@@ -3,9 +3,13 @@ class CollectionsController < ApplicationController
   before_action :correct_user,		only: [:destroy, :update]
 
   def show
-    @current_collection = Collection.friendly.find(params[:id])
-    @user = @current_collection.user   
-    @books = @current_collection.books
+    if Collection.friendly.find(params[:id]) == nil
+      redirect_to root_path
+    else
+      @current_collection = Collection.friendly.find(params[:id])
+      @user = @current_collection.user   
+      @books = @current_collection.books
+    end
   end
   
   def create

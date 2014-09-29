@@ -1,4 +1,4 @@
-<div class="panel panel-default collection_info">
+<div class="panel panel-default chapter_info">
   <div class="panel-heading">
     <% if current_user?(@user) %>
       <div class="dropdown pull-right">
@@ -6,20 +6,19 @@
           <span class="caret"></span>
         </a>
         <ul class="dropdown-menu" role="menu">
-          <li><a href="#" data-toggle="modal" data-target="#edit-collection-form"> Edit </a></li>
+          <li> Edit </li>
           <li class="divider"></li>
           <li>
-            <%= link_to "Delete", @current_collection, method: :delete,
+            <%= link_to "Delete", @current_chapter, method: :delete,
           	data: { confirm: "This can't be undone, are you sure?"},
-            title: @current_collection.name %>
+            title: @current_chapter.name %>
           </li>
         </ul>
       </div>
-      <%= render 'edit_collection_form' %>
     <% end %>
-    <h3 class="panel-title"><%= wrap(@current_collection.name, 60) %></h3>
+    <h3 class="panel-title"><%= wrap(@current_chapter.name, 600) %></h3>
   </div>
   <div class="panel-body">
-    <%= wrap(@current_collection.description, 6000) %>
+    <%= wrap(@current_chapter.content, 6000000000000000) %>
   </div>
 </div>

@@ -1,1 +1,14 @@
 <li><%= link_to book.name, book %></li>
+<% if book == @current_book %>
+  <ul class="list-group">
+    <li class="list-group-item">
+      <ul class="nav bs-docs-sidenav">
+      <% if @current_book.chapters.any? %>
+        <%= render @chapters %>
+      <% end %>
+        <li><a href="#" data-toggle="modal" data-target="#add-chapter-form">Add Chapter</a></li>
+      </ul>
+    </li>
+  </ul> 
+  <%= render "chapters/add_chapter_form" %>  
+<% end %>
