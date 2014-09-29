@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   end
   resources :users, :only => [:show], :shallow => true do
     resources :collections, :only => [:show, :create, :destroy, :update] do
-      resources :books, :only => [:show, :create, :destroy, :update]
+      resources :books, :only => [:show, :create, :destroy, :update] do
+        resources :chapters, :only => [:create, :destroy, :update]
+      end
     end
     member do
       get :following, :followers

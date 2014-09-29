@@ -6,7 +6,11 @@
   </div>
   <div class="col-md-7">
     <%= render 'shared/flash' %>
-    <%= render 'book_info' %>
+    <% if @current_chapter == nil %>
+      <%= render 'book_info' %>
+    <% else %>
+      <%= render 'chapters/chapter_content' %>
+    <% end %>
   </div>
   <%= render 'shared/advert' %>
 </div>

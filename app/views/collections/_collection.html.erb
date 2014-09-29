@@ -1,8 +1,8 @@
-<%= link_to collection, title: collection_wrap(collection.name, 60) do %>
+<%= link_to collection, title: wrap(collection.name, 60) do %>
 <div class= "col-md-3">
   <div class= "panel panel-default collection-small-info">
     <div class= "panel-heading">
-      <%= collection_wrap(collection.name, 16) %>
+      <%= wrap(collection.name, 16) %>
     </div>
     <div class= "panel-body text-center">
       <%= image_tag("Fireworks/Book5.png", alt: "Collection", size: "140" ) %>

@@ -17,9 +17,9 @@
       </div>
       <%= render 'edit_book_form' %>
     <% end %>
-    <h3 class="panel-title"><%= book_wrap(@current_book.name, 60) %></h3>
+    <h3 class="panel-title"><%= wrap(@current_book.name, 60) %></h3>
   </div>
   <div class="panel-body">
-    <%= book_wrap(@current_book.description, 60000) %>
+    <%= wrap(@current_book.description, 60000) %>
   </div>
 </div>
