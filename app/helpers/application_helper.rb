@@ -26,7 +26,7 @@ module ApplicationHelper
     devise_mapping.to
   end
   
-  def wrap(content, n)
+  def wrap(content, n = 1000)
     truncate(sanitize(strip_tags(raw(content.split.map{ |s| wrap_long_string(s) }.join(' ')))), length: n, separator: ' ', escape: false)
   end
   
