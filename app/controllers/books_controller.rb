@@ -13,7 +13,7 @@ class BooksController < ApplicationController
     @book = current_collection.books.build(book_params(:book))
     if @book.save
       flash[:success] = "Book created!"
-      redirect_to book_path(@book)
+      redirect_to @book
     else
       flash[:danger] = @book.errors.full_messages
       redirect_to root_path
@@ -24,6 +24,18 @@ class BooksController < ApplicationController
     @book.destroy
     flash[:success] = "Book deleted"
     redirect_to collection_path(@book.collection)
+  end
+  
+  def update
+    if @book.update_attributes(book_params(:current_book))
+      @book.slug = nil
+      @book.save!
+      flash[:success] = "Book Updated"
+      redirect_to @book
+    else
+      flash[:danger] = @book.errors.full_messages
+      redirect_to collection_path(@book.collection)
+    end
   end
   
   private
