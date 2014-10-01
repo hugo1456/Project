@@ -6,7 +6,7 @@
           <span class="caret"></span>
         </a>
         <ul class="dropdown-menu" role="menu">
-          <li> Edit </li>
+          <li> <%= link_to "Edit", "/editor" + request.fullpath, id: "edit_link", data: {save_url: chapter_path(@current_chapter)} %> </li>
           <li class="divider"></li>
           <li>
             <%= link_to "Delete", @current_chapter, method: :delete,
@@ -16,9 +16,9 @@
         </ul>
       </div>
     <% end %>
-    <h3 class="panel-title"><%= wrap(@current_chapter.name, 600) %></h3>
+    <h3 class="panel-title" id="chapter_title" data-mercury="simple"><%= wrap(@current_chapter.name, 600) %></h3>
   </div>
-  <div class="panel-body">
+  <div class="panel-body" id="chapter_content" data-mercury="full">
     <%= wrap(@current_chapter.content, 6000000000000000) %>
   </div>
 </div>

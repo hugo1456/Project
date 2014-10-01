@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Mercury::Engine => '/' 
   devise_for :admins, controllers: { registrations: "admins/registrations" }
   resources :admins, :only => [:show]
   devise_for :users, :skip => [:sessions], controllers: { registrations: "users/registrations" }

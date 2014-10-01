@@ -13,6 +13,20 @@ class ChaptersController < ApplicationController
     end
   end
   
+  def update
+    @chapter.name = params[:content][:chapter_title][:value]
+    @chapter.content = params[:content][:chapter_content][:value]
+    @chapter.slug = nil
+    @chapter.save!
+    render text: ""
+  end
+  
+  def destroy
+    @chapter.destroy
+    flash[:success] = "Chapter deleted"
+    redirect_to book_path(@chapter.book)
+  end
+  
   private
   
   def current_book
@@ -20,12 +34,12 @@ class ChaptersController < ApplicationController
   end
 
   def chapter_params(chapter)
-    params.require(chapter).permit(:name)
+    params.require(chapter).permit(:name, :content)
   end
   
 
   def correct_user
-    @chapter = current_user.books.friendly.find(params[:id]).chapter.friendly.find(params[:c])
-    redirect_to book_path(@book) if @chapter.nil?
+    @chapter = Chapter.friendly.find(params[:id])
+    redirect_to book_path(@book) unless @chapter.book.collection.user = current_user
   end
 end

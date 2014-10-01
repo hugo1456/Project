@@ -6,7 +6,9 @@
       <% if @current_book.chapters.any? %>
         <%= render @chapters %>
       <% end %>
+      <% if current_user?(@user) %>
         <li><a href="#" data-toggle="modal" data-target="#add-chapter-form">Add Chapter</a></li>
+      <% end %>
       </ul>
     </li>
   </ul> 
