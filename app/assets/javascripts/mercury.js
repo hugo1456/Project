@@ -100,12 +100,12 @@ window.Mercury = {
           redo:                ['Redo', 'Redo your last action'],
           sep:                 ' '
           },
-        insertLink:            ['Link', 'Insert Link', { modal: '/mercury/modals/link.html', regions: ['full', 'markdown'] }],
-        insertMedia:           ['Media', 'Insert Media (images and videos)', { modal: '/mercury/modals/media.html', regions: ['full', 'markdown'] }],
-        insertTable:           ['Table', 'Insert Table', { modal: '/mercury/modals/table.html', regions: ['full', 'markdown'] }],
-        insertCharacter:       ['Character', 'Special Characters', { modal: '/mercury/modals/character.html', regions: ['full', 'markdown'] }],
-        snippetPanel:          ['Snippet', 'Snippet Panel', { panel: '/mercury/panels/snippets.html' }],
-        sep2:                  ' ',
+        // insertLink:            ['Link', 'Insert Link', { modal: '/mercury/modals/link.html', regions: ['full', 'markdown'] }],
+        // insertMedia:           ['Media', 'Insert Media (images and videos)', { modal: '/mercury/modals/media.html', regions: ['full', 'markdown'] }],
+        // insertTable:           ['Table', 'Insert Table', { modal: '/mercury/modals/table.html', regions: ['full', 'markdown'] }],
+        // insertCharacter:       ['Character', 'Special Characters', { modal: '/mercury/modals/character.html', regions: ['full', 'markdown'] }],
+        // snippetPanel:          ['Snippet', 'Snippet Panel', { panel: '/mercury/panels/snippets.html' }],
+        // sep2:                  ' ',
         historyPanel:          ['History', 'Page Version History', { panel: '/mercury/panels/history.html' }],
         sep3:                  ' ',
         notesPanel:            ['Notes', 'Page Notes', { panel: '/mercury/panels/notes.html' }]
@@ -155,32 +155,32 @@ window.Mercury = {
           indent:              ['Increase Indentation'],
           sep:                 '-'
           },
-        table:                 {
-          _context:            true,
-          insertRowBefore:     ['Insert Table Row', 'Insert a table row before the cursor', { regions: ['full'] }],
-          insertRowAfter:      ['Insert Table Row', 'Insert a table row after the cursor', { regions: ['full'] }],
-          deleteRow:           ['Delete Table Row', 'Delete this table row', { regions: ['full'] }],
-          insertColumnBefore:  ['Insert Table Column', 'Insert a table column before the cursor', { regions: ['full'] }],
-          insertColumnAfter:   ['Insert Table Column', 'Insert a table column after the cursor', { regions: ['full'] }],
-          deleteColumn:        ['Delete Table Column', 'Delete this table column', { regions: ['full'] }],
-          sep1:                ' ',
-          increaseColspan:     ['Increase Cell Columns', 'Increase the cells colspan'],
-          decreaseColspan:     ['Decrease Cell Columns', 'Decrease the cells colspan and add a new cell'],
-          increaseRowspan:     ['Increase Cell Rows', 'Increase the cells rowspan'],
-          decreaseRowspan:     ['Decrease Cell Rows', 'Decrease the cells rowspan and add a new cell'],
-          sep2:                '-'
-          },
-        rules:                 {
-          horizontalRule:      ['Horizontal Rule', 'Insert a horizontal rule'],
-          sep1:                '-'
-          },
+        // table:                 {
+          // _context:            true,
+          // insertRowBefore:     ['Insert Table Row', 'Insert a table row before the cursor', { regions: ['full'] }],
+          // insertRowAfter:      ['Insert Table Row', 'Insert a table row after the cursor', { regions: ['full'] }],
+          // deleteRow:           ['Delete Table Row', 'Delete this table row', { regions: ['full'] }],
+          // insertColumnBefore:  ['Insert Table Column', 'Insert a table column before the cursor', { regions: ['full'] }],
+          // insertColumnAfter:   ['Insert Table Column', 'Insert a table column after the cursor', { regions: ['full'] }],
+          // deleteColumn:        ['Delete Table Column', 'Delete this table column', { regions: ['full'] }],
+          // sep1:                ' ',
+          // increaseColspan:     ['Increase Cell Columns', 'Increase the cells colspan'],
+          // decreaseColspan:     ['Decrease Cell Columns', 'Decrease the cells colspan and add a new cell'],
+          // increaseRowspan:     ['Increase Cell Rows', 'Increase the cells rowspan'],
+          // decreaseRowspan:     ['Decrease Cell Rows', 'Decrease the cells rowspan and add a new cell'],
+          // sep2:                '-'
+          // },
+        // rules:                 {
+          // horizontalRule:      ['Horizontal Rule', 'Insert a horizontal rule'],
+          // sep1:                '-'
+          // },
         formatting:            {
           removeFormatting:    ['Remove Formatting', 'Remove formatting for the selection', { regions: ['full'] }],
           sep2:                ' '
           },
-        editors:               {
-          htmlEditor:          ['Edit HTML', 'Edit the HTML content', { regions: ['full'] }]
-          }
+        // editors:               {
+          // htmlEditor:          ['Edit HTML', 'Edit the HTML content', { regions: ['full'] }]
+          // }
         },
 
       snippets: {
